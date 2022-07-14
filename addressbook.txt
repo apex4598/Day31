@@ -1,0 +1,31 @@
+
+create table AddressBook(first_name varchar(10), last_name varchar(10),city varchar(10),state varchar(10),zip varchar(10), phone_number varchar(12), email varchar(20),primary key(first_name));
+
+insert into AddressBook(first_name, last_name, city, state, zip, phone_number, email) values ("ajit","padawl","Mumbai","MH","400001","9876543210","ajit@gmail.com"), ("Pravin","Patil","Mumbai","MH","400001","93452210","pravin@gmail.com"),("Rahul","Bhoir","Mumbai","MH","400002","945343210","rahul@gmail.com"),("Umesh","Patil","Pune","MH","400003","976543210","umesh@gmail.com");
+
+select * from AddressBook;
+
+update AddressBook set last_name='patil' where first_name='umesh';
+
+select * from AddressBook;
+
+delete from AddressBook where first_name = "pravin";
+
+select * from AddressBook;
+
+select * from AddressBook where city = "Mubmai" or state = "MH";
+
+select count(city) from AddressBook group by city;
+
+select count(state) from AddressBook group by state;
+
+select * from AddressBook where city = "Mumbai" order by first_name ASC ;
+alter table AddressBook add column contact_type varchar(10) after last_name;
+
+update AddressBook set contact_type = "friends";
+
+select count(contact_type) from addressbook;
+
+insert into AddressBook(first_name, last_name, contact_type, city, state, zip, phone_number, email) values ("Rakesh","Kot","family","Thane","Mh","438732","6547336253","rakesh@gmail.com"), ("Sagar","Pawar","friends","pune","MH","432123","8876767654","rakesh@gmail.com");
+
+select * from addressbook;
